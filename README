@@ -44,7 +44,7 @@ The five options available in the menu are described as follows:
 
 4 - This option retrieves the top 1000 most frequent terms and then applies the classifiers.
 
-5 - This option applies the clustering algorithms.
+5 - This option applies the clustering algorithms. 
 
 Note : It is not mandatory to run option 1 for data collection. Every option is independent and
        would perform data collection either from SGML files or CSV.

@@ -199,7 +199,9 @@ class documents():
         stoplist = stopwords.words('english')
         #as part of pre-processing, we remove the punctuation and tokenize the corpus
         texts = [nltk.word_tokenize(item['body'].lower().translate(None, string.punctuation+'\xfc')) for item in data if type(item['body']) != float]        
+        #assigning a unique integer id to all words appearing in the corpus       
         dictionary = corpora.Dictionary(texts)
+        # counts the number of occurences of each distinct word, converts the word to its integer word id and returns the result as a sparse vector.
         corpus = [dictionary.doc2bow(text) for text in texts]   
         #tf-idf method applied on the corpus
         tfidf = models.TfidfModel(corpus) 
@@ -263,6 +265,7 @@ class documents():
             print("Apply classification")
             c = classifiers()
             results = []
+            
             for clf, name in (
                 (MultinomialNB(), "MultinomialNB"),
                 (Perceptron(n_iter=500), "Perceptron"),
@@ -406,8 +409,9 @@ class classifiers():
         
         pl.figure(figsize=(12,10))
         pl.title("Score")
-        pl.barh(indices, accuracy, .1, label="accuracy", color='r')
-        pl.barh(indices + .3, precision, .1, label="precision", color='g')
+        pl.barh(indices, accuracy, .1, label="accuracy", color='#0B6121')
+        pl.barh(indices + .3, precision, .1, label="precision", color='#DF0174')
+        pl.barh(indices + .6, recall, .1, label="recall", color='#FF8000')
         pl.yticks(())
         pl.legend(loc='best')
         pl.subplots_adjust(left=.25)

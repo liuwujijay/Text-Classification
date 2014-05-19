@@ -1,0 +1,51 @@
+The libraries/packages required in order to launch the program:
+	- install NLTK and dependencies 
+		Once installed, open a python shell and type import nltk and nltk.download(). Then download the following requirements for the project:
+			wordnet, stopwords, words in Corpora + maxent_ne_chunker and maxent_treebank_pos in Models
+	- install NumPy 
+	- install SciPy 
+	- install pandas and dependencies
+	- install Scikit-learn and dependencies
+	- install gensim and dependencies
+	- install matplotlib and dependencies
+
+To launch the script, please type the following command in a shell:
+python script.py.
+
+A menu, similar to the one below should  appear on the console. It is an user-interactive menu.
+
+Example of the menu:
+********************* Start of the program *********************
+* 1 - Collect the data from the 21 SGML files                  *
+
+* 2 - Feature selection with LDA (Topic modelling)             *
+
+* 3 - Feature selection with LDA and tfIdf combined            *
+
+* 4 - Classification using best features                       *
+
+* 5 - Clustering using the entire dataset                      *
+
+****************************************************************
+Please, select the option you desire:
+
+
+The five options available in the menu are described as follows:
+
+1 - This option allows you to collect the data from the SGML files which have to be placed
+    within the folder "reuters21578" at the root of the project. Please Note that for 
+    computational purposes, the raw data is then stored in a CSV file called "collection.csv" 
+    at the root of the project.
+
+2 - This option applies LDA to select top 1000 features and applies the classification.
+
+3 - This option retrieves the top 1000 frequent terms(by applying tf-idf) and the features by
+    topic modelling and then, applies the classifiers.
+
+4 - This option retrieves the top 1000 most frequent terms and then applies the classifiers.
+
+5 - This option applies the clustering algorithms.
+
+Note : It is not mandatory to run option 1 for data collection. Every option is independent and
+       would perform data collection either from SGML files or CSV.
+       

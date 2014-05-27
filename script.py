@@ -108,7 +108,7 @@ class documents():
     #collection of the data contained the 21 SGML files   
     def collection(self):
         print("Collection in process...")
-        #loop through the 21 SGML files and store the data into data
+        #loop through the 21 SGML files and store the data into data..
         for i in range(0,22):
             if i < 10:
                 self.data = self.data + parseData("./reuters21578/reut2-00" + str(i) + ".sgm");
